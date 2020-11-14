@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <title>Technical CPE Training</title>
+
+
+
+  <div style="position:relative;">
+    <div class="longfrontimage">
+      <a href="../../info/about"><span>Welcome CPE's</span></a>
+      <p>Welcome fuckers. We are a safe space to grant technical writing stuff.  </p>
+      <div class="longfrontimage1"></div>
+    </div>
+    <div class="longfrontimage">
+      <a href="../../whoweare"><span>WHO WE ARE</span></a>
+      <p>David Krasowska and Nishant Patel have created the world's greatest training program.</p>
+      <div class="longfrontimage2"></div>
+      </div>
+    <div class="longfrontimage">
+      <a href="../../racing"><span>Get Started</span></a>
+      <p> Get started by creating your account <a href="{% url 'account' %}">here</a></p>
+      <div class="longfrontimage3"></div>
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,6 +128,6 @@ STATIC_ROOT =  os.path.join(BASE_DIR, 'static_cdn')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-LOGIN_URL = '/bucks/login'
-LOGIN_REDIRECT_URL = "/bucks"
-LOGOUT_REDIRECT_URL = "/bucks"
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = "/account"
+LOGOUT_REDIRECT_URL = "/account"

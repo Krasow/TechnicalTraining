@@ -3,7 +3,11 @@
 {% load static %}
 <title> {{request.user.username}}'s CPE Training</title>
 <div class=container> 
-    <h1> Welcome  {{ request.user.username }} to Week {{ weekNumber.week }} &nbsp;  &nbsp; <small><a href="\logout">Grades</a></small> &nbsp; <small><a href="\logout">Logout</a></small></h1> 
+    {% if request.user.is_superuser %}
+        <h1><a href="{% url 'week1' %}"> Week 1 &nbsp; </a> <a href="{% url 'week2' %}"> Week 2 &nbsp; </a> <a href="{% url 'week3' %}"> Week 3 &nbsp; </a> </h1>
+    {% endif %}
+    <br><hr>
+    <h1> Welcome  {{ request.user.username }} to Week {{ weekNumber.week }} &nbsp;  &nbsp; <small><a href="{% url 'grade' %}">Grades</a></small> &nbsp; <small><a href="\logout">Logout</a></small></h1> 
     {% if Grades.pretest == False and weekNumber.week == '1'%}
         <h2> Click <a href="{% url 'test' %}"> here </a> to take the pre test </h2>
         <br><hr>

@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from django import forms
 from .models import Grade, Week
-from .forms import AccountForm
+from .forms import AccountForm, UpdateWeek
 # Create your views here.
 def home_view(request):
     return render(request, "index.html", {})
@@ -37,3 +37,31 @@ def test_view(response):
         'weekNumber':weekNumber
     }
     return render(response, "test.html",context)
+
+def grade_view(response):
+    Grades = Grade.objects.get(id=response.user.id)
+    context = {
+        'Grades':Grade,
+    }
+    return render(response, "grades.html", context)
+
+def week1_switch(response):
+    if response.user.is_superuser:
+        weekNumber = Week.objects.get(id=1)
+        weekNumber.week = 1
+        weekNumber.save()
+    return redirect('account')
+
+def week2_switch(response):
+    if response.user.is_superuser:
+        weekNumber = Week.objects.get(id=1)
+        weekNumber.week = 2
+        weekNumber.save()
+    return redirect('account')
+
+def week3_switch(response): 
+    if response.user.is_superuser:
+        weekNumber = Week.objects.get(id=1)
+        weekNumber.week = 3
+        weekNumber.save()
+    return redirect('account')

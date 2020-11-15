@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <h1>Pre test {{ Grades.pretest }}%</h1>
+    <h1>Project {{ Grades.codingProject }}%</h1>
+    <h1>Post test {{ Grades.posttest }}%</h1>
+    <h1>Final Grade {{ Grades.finalGrade }}%</h1>
+    <a class="btn btn-secondary" href="../account" role="button">Back to Training</a>
+</div>
+{% endblock %}

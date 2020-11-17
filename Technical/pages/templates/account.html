@@ -2,14 +2,15 @@
 {% block content %}
 {% load static %}
 <title> {{request.user.username}}'s CPE Training</title>
-<div class=container> 
+<div class="container"> 
     {% if request.user.is_superuser %}
         <h1><a href="{% url 'week1' %}"> Week 1 &nbsp; </a> <a href="{% url 'week2' %}"> Week 2 &nbsp; </a> <a href="{% url 'week3' %}"> Week 3 &nbsp; </a> </h1>
     {% endif %}
     <br><hr>
     <h1> Welcome  {{ request.user.username }} to Week {{ weekNumber.week }} &nbsp;  &nbsp; <small><a href="{% url 'grade' %}">Grades</a></small> &nbsp; <small><a href="\logout">Logout</a></small></h1> 
+    <p>If you need help, please click <a href="mailto:dkrasow@clemson.edu" > here </a> to email an instructor. We will help you out.</p>
     {% if Grades.pretest == False and weekNumber.week == '1'%}
-        <h2> Click <a href="{% url 'test' %}"> here </a> to take the pre test </h2>
+        <h2> Click <a href="{% url 'test' %}"> here </a> to take the Pre Test </h2>
         <br><hr>
         <h1>How to Properly Communicate with Peers? </h1>
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rXUc7rfCGvc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -24,19 +25,20 @@
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rXUc7rfCGvc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h1>How to Communicate With Peers Through Visual Studio?</h1>
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rXUc7rfCGvc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       
-        <p> Congradulations, You have made it to week 2! Below is a group project attached. Once you have finsihed the video lectures, please find a team of 2-4 people. If you are unable to find a team, we can help add you to a group.
+        <hr>
+        <p> Congratulations, You have made it to week 2! Below is a group project attached. Once you have finished the video lectures, please find a team of 2-4 people. If you are unable to find a team, we can help add you to a group.
             Within the document, you will find an email containing instructions of the program you need to create with your team. This is a collaborative effort using Microsoft Visual Studio and the Live Share Extension. You need to be
             able to follow all tasks exactly and add proper commenting so other people can read your assignment. Proper commenting is one of the most important forms of communication within computer and software engineering. 
-            Once your team have finsished the coding section of the project, your group will need to write an email to dkrasow@clemson.edu. This email will contain the purpose of the code and how it is meant to be implemented.
+            Once your team have finished the coding section of the project, your group will need to write an email to dkrasow@clemson.edu. This email will contain the purpose of the code and how it is meant to be implemented.
             Remember, the person receiving the email is not part of the computer engineering field. You will need to use skills learned in the first week of lectures in order to complete this part of the assignment.
          </p>
+         <hr>
       {% endif %}
 
     {% if Grades.posttest == False and weekNumber.week == '3'%}
-        <h2> Click <a href="{% url 'test' %}"> here </a> to take the post test </h2>
-        <p> Congradulations, You have made it to week 3! There is a final post test to take. This week you will be finishing up your coding projects with your assigned group. You will need 
-            to send these projects to <a href="mailto:dkrasow@clemson.edu">dkrasow@clemson.edu</a> in order to recieve credit. Remember, the person who recieves this is not within the Computer Engineering Field. Use the skills from the lectures to convey 
+        <h2> Click <a href="{% url 'test' %}"> here </a> to take the Post Test </h2>
+        <p> Congratulations, You have made it to week 3! There is a final post test to take. This week you will be finishing up your coding projects with your assigned group. You will need 
+            to send these projects to <a href="mailto:dkrasow@clemson.edu">dkrasow@clemson.edu</a> in order to receive credit. Remember, the person who receives this is not within the Computer Engineering Field. Use the skills from the lectures to convey 
             the purpose of the code and how it is meant to be implemented. 
         </p>
     {% endif %}

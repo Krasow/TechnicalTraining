@@ -68,7 +68,7 @@ body, html {
   font-family: inherit;
   position: absolute;
   margin-left: 50%;
-  padding-top: 100px;
+  padding-top: 50px;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 40pt;
@@ -83,7 +83,7 @@ body, html {
   position: absolute;
   margin-left: 50%;
   margin-right: 5%;
-  padding-top: 200px;
+  padding-top: 125px;
   font-size: 18pt;
   font-weight: bolder;
   text-align: left;
@@ -119,17 +119,17 @@ body, html {
 }
 
 /* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1300px) {
     .longfrontimage{
       width: 100%;
     }
 
     .longfrontimage span{
-      font-size: 28pt;
+      font-size: 24pt;
     }
 
     .longfrontimage p{
-      font-size: 16pt;
+      font-size: 14pt;
     }
 }
 

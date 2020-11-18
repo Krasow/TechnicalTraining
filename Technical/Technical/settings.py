@@ -21,10 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'noq+!y3aqf0!^lb&@f63i@rl*9d@^fxz(x$i##r-@i*)31-7=p'
+SECRET_KEY = 'noq+!y3aqf0!^lb&@f63i@rl*9d@^fxz(x$i##r-@i*)3137=p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -131,3 +130,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = "/account"
 LOGOUT_REDIRECT_URL = "/account"
+
+try:
+        from .local_settings import *
+except ImportError:
+        pass
+

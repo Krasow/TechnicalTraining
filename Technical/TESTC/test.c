@@ -5,8 +5,9 @@
 
 
 //function to generate name random time based on the rand
-//inputs:
-//outputs:
+//inputs: random: random number generated
+//        name: name of the user entered
+//outputs: count: the amount of printed names
 int nameCall(int random, char name[12]){
     int i, count=0;
     for(i=0; i < random; i++){
@@ -43,7 +44,6 @@ void square(int count){
 
 
 int main() {
-    //declare variables for your code
     char name[12]; // char array that stores the name of the user
     int favNum; // users favorite number
     int rand; // random generated number
